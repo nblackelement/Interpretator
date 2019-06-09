@@ -33,10 +33,13 @@ public class Language {
         List<Token> tokenList = lexer.getTokenList();
 
         // Execution
-        parser.lang(tokenList);
+        parser.start(tokenList);
         Map result = stackMachine.performance(parser);
 
-        System.out.println(result);
+        // Output
+        String reverseNotation = parser.tokens.toString();
+        System.out.println("Reverse Notation: " + reverseNotation);
+        System.out.println("Result: " + result);
     }
 
 

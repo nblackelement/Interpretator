@@ -18,9 +18,9 @@ public class StackMachine {
         Map<String, Integer> tableOfVar = new HashMap<>();
         int a, b;   // operands
 
-        for (int i = 0; i <= parser.tokens_array.size() - 1; i++) {
+        for (int i = 0; i <= parser.tokens.size() - 1; i++) {
 
-            switch (parser.tokens_array.get(i)) {
+            switch (parser.tokens.get(i)) {
                 case "=":
                     a = getNum(tableOfVar);
                     tableOfVar.put(stack.pop(), a);
@@ -95,7 +95,7 @@ public class StackMachine {
                     i = getNum(tableOfVar) - 1;
                     break;
                 default:
-                    stack.push(String.valueOf(parser.tokens_array.get(i)));
+                    stack.push(String.valueOf(parser.tokens.get(i)));
                     break;
             }
 
